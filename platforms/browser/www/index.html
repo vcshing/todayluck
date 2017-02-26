@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+   <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">-->
+
+    <!-- Required meta tags-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+
+    <!-- Your app title -->
+    <title>Luck</title>
+
+    <!-- This template defaults to the iOS CSS theme. To support both iOS and material design themes, see the Framework7 Tutorial at the link below:
+        http://www.idangero.us/framework7/tutorials/maintain-both-ios-and-material-themes-in-single-app.html
+     -->
+
+    <link rel="stylesheet" href="lib/framework7/css/framework7.ios.min.css">
+    <link rel="stylesheet" href="lib/framework7/css/framework7.ios.colors.min.css">
+	<link rel="stylesheet" href="lib/framework7/css/framework7-icons.css">
+
+    <link rel="stylesheet" href="css/styles.css">
+	
+	 <script type="text/javascript" src="js/jquery.js"></script>
+	 <script type="text/javascript" src="js/moment.js"></script>
+	 <script type="text/javascript" src="js/function.js"></script>
+	 <script type="text/javascript" src="js/local_storage_manager.js"></script>
+<script language="javascript" src="js/GB2312TOBIG5.js"></script>
+<script language="javascript" src="js/GBCodeUnicode.js"></script>
+<script language="javascript" src="js/GB2312TOBIGGB.js"></script>
+<script language="javascript" src="js/BIG5TOGB2312.js"></script>
+<script language="javascript" src="js/BIGCodeUnicode.js"></script>
+<script language="javascript" src="js/BIG5TOGBBIG.js"></script>
+	 <style>
+
+	 </style>
+</head>
+
+<body>
+    <!-- Status bar overlay for full screen mode (PhoneGap) -->
+    <div class="statusbar-overlay"></div>
+
+    <!-- Panels overlay-->
+    <div class="panel-overlay"></div>
+    <!-- Left panel with reveal effect-->
+    <div class="panel panel-left panel-reveal">
+        <div class="content-block otherApp">
+            <p>Other Apps</p>
+        </div>
+		 <div class="content-block about">
+            <p> <a href="about.html">About app</a></p>
+        </div>
+    </div>
+
+    <!-- Views -->
+    <div class="views">
+        <!-- Your main view, should have "view-main" class -->
+        <div class="view view-main">
+            <!-- Top Navbar-->
+            <div class="navbar">
+                <div class="navbar-inner">
+                    <!-- We need cool sliding animation on title element, so we have additional "sliding" class -->
+                    <div class="center sliding app_title">今日運程</div>
+                    <div class="right">
+                        <!--
+                          Right link contains only icon - additional "icon-only" class
+                          Additional "open-panel" class tells app to open panel when we click on this link
+                        -->
+                        <a href="#" class="link icon-only open-panel"><i class="icon icon-bars"></i></a>
+                    </div>
+                </div>
+            </div>
+            <!-- Pages container, because we use fixed-through navbar and toolbar, it has additional appropriate classes-->
+            <div class="pages navbar-through toolbar-through">
+                <!-- Page, "data-page" contains page name -->
+                <div data-page="index" class="page">
+                    <!-- Scrollable page content -->
+                    <div class="page-content">
+                        <div class="content-block">
+							<div class="list-block">
+							  <ul>
+								<!-- Smart select item -->
+								<li>
+								  <!-- Additional "smart-select" class -->
+								  <a href="#" class="item-link smart-select">
+									<!-- select -->
+									<select name="twelveConstellations" id='twelveConstellations'>
+										<option value="capricorn">摩羯座   12/22~1/20</option>
+										<option value="aquarius">水瓶座  1/21~2/18</option>
+										<option value="pisces">雙魚座  2/19~3/20</option>
+										<option value="aries">牡羊座 3/21~4/20</option>
+										<option value="taurus">金牛座  4/21~5/21</option>
+										<option value="gemini">雙子座  5/22~6/21</option>
+										<option value="cancer">巨蟹座  6/22~7/22</option>
+										<option value="leo">獅子座 7/23~8/22</option>
+										<option value="virgo">處女座  8/23~9/22</option>
+										<option value="libra">天秤座  9/23~10/23</option>
+										<option value="scorpio">天蠍座  10/24~11/22</option>
+										<option value="sagittarius">射手座  11/23~12/21</option>
+									</select>
+									<div class="item-content">
+									 <div class="item-media"><i class="icon f7-icons">data_fill</i></div>
+									  <div class="item-inner">
+										<!-- Select label -->
+										<div class="item-title">星座</div>
+										<div class="item-after selectedTwelveConstellations_name"></div>
+									  </div>
+									</div>
+								  </a>
+								</li>
+							  </ul>
+							</div>  
+					
+							<div class="list-block">
+							
+								  <ul>
+									<li class="item-content">
+									  <div class="item-media"><i class="icon f7-icons">graph_square_fill</i></div>
+									  <div class="item-inner">
+										<div class="item-title twelveConstellations_eq0_title">綜合指數</div>
+										<div class="item-after twelveConstellations_eq0_result"></div>
+									  </div>
+									</li>
+									<li class="item-content">
+									  <div class="item-media"><i class="icon f7-icons">heart_fill</i></div>
+									  <div class="item-inner">
+										<div class="item-title twelveConstellations_eq1_title">愛情指數</div>
+										<div class="item-after twelveConstellations_eq1_result" ></div>
+									  </div>
+									</li>
+									<li class="item-content">
+									  <div class="item-media"><i class="icon f7-icons">graph_round_fill</i></div>
+									  <div class="item-inner">
+										<div class="item-title twelveConstellations_eq2_title">工作指數</div>
+										<div class="item-after twelveConstellations_eq2_result"></div>
+									  </div>
+									</li>
+									<li class="item-content">
+									  <div class="item-media"><i class="icon f7-icons">graph_round_fill</i></div>
+									  <div class="item-inner">
+										<div class="item-title twelveConstellations_eq3_title">財運指數</div>
+										<div class="item-after twelveConstellations_eq3_result"></div>
+									  </div>
+									</li>
+									<li class="item-content">
+									  <div class="item-media"><i class="icon f7-icons">graph_round_fill</i></div>
+									  <div class="item-inner">
+										<div class="item-title twelveConstellations_eq4_title">健康指數</div>
+										<div class="item-after twelveConstellations_eq4_result"></div>
+									  </div>
+									</li>
+									<li class="item-content">
+									  <div class="item-media"><i class="icon f7-icons">drawer_fill</i></div>
+									  <div class="item-inner">
+										<div class="item-title twelveConstellations_eq5_title">幸運顏色</div>
+										<div class="item-after twelveConstellations_eq5_result"></div>
+									  </div>
+									</li>
+									<li class="item-content">
+									  <div class="item-media"><i class="icon f7-icons">money_yen_fill</i></div>
+									  <div class="item-inner">
+										<div class="item-title twelveConstellations_eq6_title">幸運數字</div>
+										<div class="item-after twelveConstellations_eq6_result"></div>
+									  </div>
+									</li>
+									<li class="item-content">
+									  <div class="item-media"><i class="icon f7-icons">bolt_round_fill</i></div>
+									  <div class="item-inner">
+										<div class="item-title twelveConstellations_eq7_title">速配Q友</div>
+										<div class="item-after twelveConstellations_eq7_result"></div>
+									  </div>
+									</li>
+									
+									<li>
+									  <div class="item-content">
+									   <div class="item-media"><i class="icon f7-icons">chats_fill</i></div>
+										<div class="item-inner">
+										  <div class="item-title label twelveConstellations_eq8_title">今日概述</div>
+											<div class="twelveConstellations_eq8_result"></div>
+										</div>
+									  </div>
+									</li>
+								</ul>
+							</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Bottom Toolbar-->
+            <!--<div class="toolbar">
+                <div class="toolbar-inner">
+              
+                    <a href="#" class="link">Link 1</a>
+                    <a href="#" class="link">Link 2</a>
+                </div>
+            </div>
+			-->
+        </div>
+		
+	
+    </div>
+
+	<script>
+		var IntervalVibrate = "";
+	</script>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="lib/framework7/js/framework7.js"></script>
+    <script type="text/javascript" src="js/my-app.js"></script>
+	<script>
+
+	$(function(){
+
+		var cookie= storageManager.getCookie();
+		
+		if(cookie!="" && cookie!=null){
+			$("[name=twelveConstellations]").val(cookie.twelveConstellations_val);
+			$(".selectedTwelveConstellations_name").html(cookie.twelveConstellations_name);
+			setTimeout(function(){
+				$("[name=twelveConstellations]").trigger("change")
+			},10);
+		}
+		$(".app_title").html("今日運程 ("+ moment().format('MMMM D, YYYY') +")");
+
+		$("[name=twelveConstellations]").bind("change",function(){
+		//debugger;
+			$.ajax({
+				type: "post",
+				url: "http://app.data.qq.com/?umod=astro&act=astro&jsonp=1&func=TodatTpl&t=4&m=5&d=12",
+				data: {
+				  "a": $("[name=twelveConstellations] :selected").val(),
+				  "y": moment().format('YYYY') ,
+				  "m": moment().format('M'),
+				  "d": moment().format('D')
+				},
+				dataType: "jsonp",
+				jsonp: "callback",//传递给请求处理程序或页面的，用以获得jsonp回调函数名的参数名(一般默认为:callback)
+				jsonpCallback:"TodatTpl",//自定义的jsonp回调函数名称，默认为jQuery自动生成的随机函数名，也可以写"?"，jQuery会自动为你处理数据
+				success: function(response){
+					console.log(response);
+					console.log(response.fortune);
+					$(".icon-back").trigger("click");
+					$(response.fortune).each(function(index,content){
+						$(".twelveConstellations_eq"+index+"_result").html(toCode(content.content,1));
+						storageManager.setCookie({
+							"twelveConstellations_name":$("[name=twelveConstellations] :selected").html(),
+							"twelveConstellations_val":$("[name=twelveConstellations] :selected").val()
+						})
+					})
+					
+				}
+			 });
+		})
+		
+		$(".otherApp").bind("click",function(e){
+			e.preventDefault();
+			//alert(1);
+			var target = "_system";
+			var options = "location=yes";
+			var url = "https://play.google.com/store/apps/developer?id=Sky+Explorer";
+			window.open(url, target, options);
+			
+		})
+	})
+	
+	</script>
+</body>
+
+</html>
