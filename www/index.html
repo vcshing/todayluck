@@ -541,8 +541,9 @@
 
             }
 
-            myApp.onPageInit('.page[data-page="twelveConstellationsDetail"]', function(page) {
+            myApp.onPageInit('twelveConstellationsDetail', function(page) {
                 //	console.log($$(".twelveConstellationsDetailContents").html());
+                //debugger;
                 if (lang == "sc") {
                     $(".twelveConstellationsDetailContents").html(toCode($(".twelveConstellationsDetailContents").html(), 2));
                 } else {
