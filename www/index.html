@@ -503,6 +503,7 @@
 
                 if (cookie == "" || cookie == null) {
                     storageManager.setCookie({"twelveConstellations_name": $("[name=twelveConstellations] option").eq(0).html(), "twelveConstellations_val": $("[name=twelveConstellations] option").eq(0).val()})
+                    cookie = storageManager.getCookie();
                 }
 
                 $("[name=twelveConstellations]").val(cookie.twelveConstellations_val);
