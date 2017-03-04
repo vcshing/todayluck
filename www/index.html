@@ -75,9 +75,7 @@
                         <div class="center sliding app_title">今日運程</div>
 
                         <div class="right">
-                            <a href="#" class="button langen">Eng</a>
-                            <a href="#" class="button langtc">Tc</a>
-                            <a href="#" class="button langsc">Sc</a>
+
                             <!--
                           Right link contains only icon - additional "icon-only" class
                           Additional "open-panel" class tells app to open panel when we click on this link
@@ -94,7 +92,11 @@
                     <div data-page="index" class="page">
                         <!-- Scrollable page content -->
                         <div class="page-content">
-                            <div class="content-block">
+                          <p class="buttons-row">
+                            <a href="#" class="button langtc">Traditional Chinese</a>
+                            <a href="#" class="button langen">English</a>
+                            <a href="#" class="button langsc">Simplified Chinese</a>
+                          </p>
                                 <div class="list-block">
                                     <ul>
                                         <!-- Smart select item -->
@@ -376,7 +378,19 @@
                 } else {
                     lang = "en";
                 }
-
+                if(lang=="tc"){
+                  $(".langen").removeClass("button-fill");
+                  $(".langtc").addClass("button-fill");
+                  $(".langsc").removeClass("button-fill");
+                }else if(lang=="sc"){
+                  $(".langen").removeClass("button-fill");
+                  $(".langtc").removeClass("button-fill");
+                  $(".langsc").addClass("button-fill");
+                }else{
+                  $(".langen").addClass("button-fill");
+                  $(".langtc").removeClass("button-fill");
+                  $(".langsc").removeClass("button-fill");
+                }
                 pageInit();
 
                 $("[name=twelveConstellations]").bind("change", function() {
@@ -442,16 +456,25 @@
 
                 $(".langen").bind("click", function() {
                     lang = "en";
+                    $(".langen").addClass("button-fill");
+                    $(".langtc").removeClass("button-fill");
+                    $(".langsc").removeClass("button-fill");
                     pageInit();
                 })
 
                 $(".langsc").bind("click", function() {
                     lang = "sc";
+                    $(".langen").removeClass("button-fill");
+                    $(".langtc").removeClass("button-fill");
+                    $(".langsc").addClass("button-fill");
                     pageInit();
                 })
 
                 $(".langtc").bind("click", function() {
                     lang = "tc";
+                    $(".langen").removeClass("button-fill");
+                    $(".langtc").addClass("button-fill");
+                    $(".langsc").removeClass("button-fill");
                     pageInit();
                 })
 
