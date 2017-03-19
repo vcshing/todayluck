@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <!--
+    <head>
+        <!--
         Customize this policy to fit your own app's needs. For more guidance, see:
             https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
         Some notes:
@@ -10,271 +10,549 @@
             * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
                 * Enable inline JS: add 'unsafe-inline' to default-src
         -->
-   <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">-->
+        <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">-->
 
-    <!-- Required meta tags-->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="format-detection" content="telephone=no">
-    <meta name="msapplication-tap-highlight" content="no">
+        <!-- Required meta tags-->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
 
-    <!-- Your app title -->
-    <title>Luck</title>
+        <!-- Your app title -->
+        <title>Luck</title>
 
-    <!-- This template defaults to the iOS CSS theme. To support both iOS and material design themes, see the Framework7 Tutorial at the link below:
+        <!-- This template defaults to the iOS CSS theme. To support both iOS and material design themes, see the Framework7 Tutorial at the link below:
         http://www.idangero.us/framework7/tutorials/maintain-both-ios-and-material-themes-in-single-app.html
      -->
 
-    <link rel="stylesheet" href="lib/framework7/css/framework7.ios.min.css">
-    <link rel="stylesheet" href="lib/framework7/css/framework7.ios.colors.min.css">
-	<link rel="stylesheet" href="lib/framework7/css/framework7-icons.css">
+        <link rel="stylesheet" href="lib/framework7/css/framework7.ios.min.css">
+        <link rel="stylesheet" href="lib/framework7/css/framework7.ios.colors.min.css">
+        <link rel="stylesheet" href="lib/framework7/css/framework7-icons.css">
 
-    <link rel="stylesheet" href="css/styles.css">
-	
-	 <script type="text/javascript" src="js/jquery.js"></script>
-	 <script type="text/javascript" src="js/moment.js"></script>
-	 <script type="text/javascript" src="js/function.js"></script>
-	 <script type="text/javascript" src="js/local_storage_manager.js"></script>
-<script language="javascript" src="js/GB2312TOBIG5.js"></script>
-<script language="javascript" src="js/GBCodeUnicode.js"></script>
-<script language="javascript" src="js/GB2312TOBIGGB.js"></script>
-<script language="javascript" src="js/BIG5TOGB2312.js"></script>
-<script language="javascript" src="js/BIGCodeUnicode.js"></script>
-<script language="javascript" src="js/BIG5TOGBBIG.js"></script>
-	 <style>
+        <link rel="stylesheet" href="css/styles.css">
 
-	 </style>
-</head>
+        <script type="text/javascript" src="js/jquery.js"></script>
+        <script type="text/javascript" src="js/moment.js"></script>
+        <script type="text/javascript" src="js/function.js"></script>
+        <script type="text/javascript" src="js/local_storage_manager.js"></script>
+        <script language="javascript" src="js/GB2312TOBIG5.js"></script>
+        <script language="javascript" src="js/GBCodeUnicode.js"></script>
+        <script language="javascript" src="js/GB2312TOBIGGB.js"></script>
+        <script language="javascript" src="js/BIG5TOGB2312.js"></script>
+        <script language="javascript" src="js/BIGCodeUnicode.js"></script>
+        <script language="javascript" src="js/BIG5TOGBBIG.js"></script>
+        <style></style>
+    </head>
 
-<body>
-    <!-- Status bar overlay for full screen mode (PhoneGap) -->
-    <div class="statusbar-overlay"></div>
+    <body>
+        <!-- Status bar overlay for full screen mode (PhoneGap) -->
+        <div class="statusbar-overlay"></div>
 
-    <!-- Panels overlay-->
-    <div class="panel-overlay"></div>
-    <!-- Left panel with reveal effect-->
-    <div class="panel panel-left panel-reveal">
-        <div class="content-block otherApp">
-            <p>Other Apps</p>
+        <!-- Panels overlay-->
+        <div class="panel-overlay"></div>
+        <!-- Left panel with reveal effect-->
+        <div class="panel panel-left panel-reveal">
+            <div class="content-block otherApp">
+                <p>Other Apps</p>
+            </div>
+			<div class="content-block shareApp">
+				<p>Share App</p>
+			</div>
         </div>
-		 <div class="content-block about">
-            <p> <a href="about.html">About app</a></p>
-        </div>
-    </div>
 
-    <!-- Views -->
-    <div class="views">
-        <!-- Your main view, should have "view-main" class -->
-        <div class="view view-main">
-            <!-- Top Navbar-->
-            <div class="navbar">
-                <div class="navbar-inner">
-                    <!-- We need cool sliding animation on title element, so we have additional "sliding" class -->
-                    <div class="center sliding app_title">今日運程</div>
-                    <div class="right">
-                        <!--
+        <!-- Views -->
+        <div class="views">
+            <!-- Your main view, should have "view-main" class -->
+            <div class="view view-main">
+                <!-- Top Navbar-->
+                <div class="navbar">
+                    <div class="navbar-inner">
+                        <!-- We need cool sliding animation on title element, so we have additional "sliding" class -->
+                        <div class="center sliding app_title">今日運程</div>
+
+                        <div class="right">
+
+                            <!--
                           Right link contains only icon - additional "icon-only" class
                           Additional "open-panel" class tells app to open panel when we click on this link
                         -->
-                        <a href="#" class="link icon-only open-panel"><i class="icon icon-bars"></i></a>
-                    </div>
-                </div>
-            </div>
-            <!-- Pages container, because we use fixed-through navbar and toolbar, it has additional appropriate classes-->
-            <div class="pages navbar-through toolbar-through">
-                <!-- Page, "data-page" contains page name -->
-                <div data-page="index" class="page">
-                    <!-- Scrollable page content -->
-                    <div class="page-content">
-                        <div class="content-block">
-							<div class="list-block">
-							  <ul>
-								<!-- Smart select item -->
-								<li>
-								  <!-- Additional "smart-select" class -->
-								  <a href="#" class="item-link smart-select">
-									<!-- select -->
-									<select name="twelveConstellations" id='twelveConstellations'>
-										<option value="capricorn">摩羯座   12/22~1/20</option>
-										<option value="aquarius">水瓶座  1/21~2/18</option>
-										<option value="pisces">雙魚座  2/19~3/20</option>
-										<option value="aries">牡羊座 3/21~4/20</option>
-										<option value="taurus">金牛座  4/21~5/21</option>
-										<option value="gemini">雙子座  5/22~6/21</option>
-										<option value="cancer">巨蟹座  6/22~7/22</option>
-										<option value="leo">獅子座 7/23~8/22</option>
-										<option value="virgo">處女座  8/23~9/22</option>
-										<option value="libra">天秤座  9/23~10/23</option>
-										<option value="scorpio">天蠍座  10/24~11/22</option>
-										<option value="sagittarius">射手座  11/23~12/21</option>
-									</select>
-									<div class="item-content">
-									 <div class="item-media"><i class="icon f7-icons">data_fill</i></div>
-									  <div class="item-inner">
-										<!-- Select label -->
-										<div class="item-title">星座</div>
-										<div class="item-after selectedTwelveConstellations_name"></div>
-									  </div>
-									</div>
-								  </a>
-								</li>
-							  </ul>
-							</div>  
-					
-							<div class="list-block">
-							
-								  <ul>
-									<li class="item-content">
-									  <div class="item-media"><i class="icon f7-icons">graph_square_fill</i></div>
-									  <div class="item-inner">
-										<div class="item-title twelveConstellations_eq0_title">綜合指數</div>
-										<div class="item-after twelveConstellations_eq0_result"></div>
-									  </div>
-									</li>
-									<li class="item-content">
-									  <div class="item-media"><i class="icon f7-icons">heart_fill</i></div>
-									  <div class="item-inner">
-										<div class="item-title twelveConstellations_eq1_title">愛情指數</div>
-										<div class="item-after twelveConstellations_eq1_result" ></div>
-									  </div>
-									</li>
-									<li class="item-content">
-									  <div class="item-media"><i class="icon f7-icons">graph_round_fill</i></div>
-									  <div class="item-inner">
-										<div class="item-title twelveConstellations_eq2_title">工作指數</div>
-										<div class="item-after twelveConstellations_eq2_result"></div>
-									  </div>
-									</li>
-									<li class="item-content">
-									  <div class="item-media"><i class="icon f7-icons">graph_round_fill</i></div>
-									  <div class="item-inner">
-										<div class="item-title twelveConstellations_eq3_title">財運指數</div>
-										<div class="item-after twelveConstellations_eq3_result"></div>
-									  </div>
-									</li>
-									<li class="item-content">
-									  <div class="item-media"><i class="icon f7-icons">graph_round_fill</i></div>
-									  <div class="item-inner">
-										<div class="item-title twelveConstellations_eq4_title">健康指數</div>
-										<div class="item-after twelveConstellations_eq4_result"></div>
-									  </div>
-									</li>
-									<li class="item-content">
-									  <div class="item-media"><i class="icon f7-icons">drawer_fill</i></div>
-									  <div class="item-inner">
-										<div class="item-title twelveConstellations_eq5_title">幸運顏色</div>
-										<div class="item-after twelveConstellations_eq5_result"></div>
-									  </div>
-									</li>
-									<li class="item-content">
-									  <div class="item-media"><i class="icon f7-icons">money_yen_fill</i></div>
-									  <div class="item-inner">
-										<div class="item-title twelveConstellations_eq6_title">幸運數字</div>
-										<div class="item-after twelveConstellations_eq6_result"></div>
-									  </div>
-									</li>
-									<li class="item-content">
-									  <div class="item-media"><i class="icon f7-icons">bolt_round_fill</i></div>
-									  <div class="item-inner">
-										<div class="item-title twelveConstellations_eq7_title">速配Q友</div>
-										<div class="item-after twelveConstellations_eq7_result"></div>
-									  </div>
-									</li>
-									
-									<li>
-									  <div class="item-content">
-									   <div class="item-media"><i class="icon f7-icons">chats_fill</i></div>
-										<div class="item-inner">
-										  <div class="item-title label twelveConstellations_eq8_title">今日概述</div>
-											<div class="twelveConstellations_eq8_result"></div>
-										</div>
-									  </div>
-									</li>
-								</ul>
-							</div>
+                            <a href="#" class="link icon-only open-panel">
+                                <i class="icon icon-bars"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
-            </div>
-            <!-- Bottom Toolbar-->
-            <!--<div class="toolbar">
+                <!-- Pages container, because we use fixed-through navbar and toolbar, it has additional appropriate classes-->
+                <div class="pages navbar-through toolbar-through">
+                    <!-- Page, "data-page" contains page name -->
+                    <div data-page="index" class="page">
+                        <!-- Scrollable page content -->
+                        <div class="page-content">
+                          <p class="buttons-row">
+                            <a href="#" class="button langtc">Traditional Chinese</a>
+                            <a href="#" class="button langen">English</a>
+                            <a href="#" class="button langsc">Simplified Chinese</a>
+                          </p>
+                                <div class="list-block">
+                                    <ul>
+                                        <!-- Smart select item -->
+                                        <li>
+                                            <!-- Additional "smart-select" class -->
+                                            <a href="#" class="item-link smart-select">
+                                                <!-- select -->
+                                                <select name="twelveConstellations" id='twelveConstellations'>
+                                                    <option value="capricorn">摩羯座 12/22~1/20</option>
+                                                    <option value="aquarius">水瓶座 1/21~2/18</option>
+                                                    <option value="pisces">雙魚座 2/19~3/20</option>
+                                                    <option value="aries">牡羊座(白羊座) 3/21~4/20</option>
+                                                    <option value="taurus">金牛座 4/21~5/21</option>
+                                                    <option value="gemini">雙子座 5/22~6/21</option>
+                                                    <option value="cancer">巨蟹座 6/22~7/22</option>
+                                                    <option value="leo">獅子座 7/23~8/22</option>
+                                                    <option value="virgo">處女座 8/23~9/22</option>
+                                                    <option value="libra">天秤座 9/23~10/23</option>
+                                                    <option value="scorpio">天蠍座 10/24~11/22</option>
+                                                    <option value="sagittarius">射手座 11/23~12/21</option>
+                                                </select>
+                                                <div class="item-content">
+                                                    <div class="item-media">
+                                                        <i class="icon f7-icons">data_fill</i>
+                                                    </div>
+                                                    <div class="item-inner">
+                                                        <!-- Select label -->
+                                                        <div class="item-title twelveConstellationsTitle">星座</div>
+                                                        <div class="item-after selectedTwelveConstellations_name"></div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+
+                                        <!--  <li>
+										<a href="#" class="item-link list-button twelveConstellationsDetail">星座分析</a>
+									</li>-->
+
+                                    </ul>
+
+                                </div>
+
+                                <div class="list-block">
+
+                                    <ul>
+                                        <li class="item-content">
+                                            <div class="item-media">
+                                                <i class="icon f7-icons">graph_square_fill</i>
+                                            </div>
+                                            <div class="item-inner">
+                                                <div class="item-title twelveConstellations_eq0_title">綜合指數</div>
+                                                <div class="item-after twelveConstellations_eq0_result"></div>
+                                            </div>
+                                        </li>
+                                        <li class="item-content">
+                                            <div class="item-media">
+                                                <i class="icon f7-icons">heart_fill</i>
+                                            </div>
+                                            <div class="item-inner">
+                                                <div class="item-title twelveConstellations_eq1_title">愛情指數</div>
+                                                <div class="item-after twelveConstellations_eq1_result"></div>
+                                            </div>
+                                        </li>
+                                        <li class="item-content">
+                                            <div class="item-media">
+                                                <i class="icon f7-icons">graph_round_fill</i>
+                                            </div>
+                                            <div class="item-inner">
+                                                <div class="item-title twelveConstellations_eq2_title">工作指數</div>
+                                                <div class="item-after twelveConstellations_eq2_result"></div>
+                                            </div>
+                                        </li>
+                                        <li class="item-content">
+                                            <div class="item-media">
+                                                <i class="icon f7-icons">graph_round_fill</i>
+                                            </div>
+                                            <div class="item-inner">
+                                                <div class="item-title twelveConstellations_eq3_title">財運指數</div>
+                                                <div class="item-after twelveConstellations_eq3_result"></div>
+                                            </div>
+                                        </li>
+                                        <li class="item-content">
+                                            <div class="item-media">
+                                                <i class="icon f7-icons">graph_round_fill</i>
+                                            </div>
+                                            <div class="item-inner">
+                                                <div class="item-title twelveConstellations_eq4_title">健康指數</div>
+                                                <div class="item-after twelveConstellations_eq4_result"></div>
+                                            </div>
+                                        </li>
+                                        <li class="item-content">
+                                            <div class="item-media">
+                                                <i class="icon f7-icons">drawer_fill</i>
+                                            </div>
+                                            <div class="item-inner">
+                                                <div class="item-title twelveConstellations_eq5_title">幸運顏色</div>
+                                                <div class="item-after twelveConstellations_eq5_result"></div>
+                                            </div>
+                                        </li>
+                                        <li class="item-content">
+                                            <div class="item-media">
+                                                <i class="icon f7-icons">money_yen_fill</i>
+                                            </div>
+                                            <div class="item-inner">
+                                                <div class="item-title twelveConstellations_eq6_title">幸運數字</div>
+                                                <div class="item-after twelveConstellations_eq6_result"></div>
+                                            </div>
+                                        </li>
+                                        <li class="item-content">
+                                            <div class="item-media">
+                                                <i class="icon f7-icons">bolt_round_fill</i>
+                                            </div>
+                                            <div class="item-inner">
+                                                <div class="item-title twelveConstellations_eq7_title">速配Q友</div>
+                                                <div class="item-after twelveConstellations_eq7_result"></div>
+                                            </div>
+                                        </li>
+
+                                        <li>
+                                            <div class="item-content">
+                                                <div class="item-media">
+                                                    <i class="icon f7-icons">chats_fill</i>
+                                                </div>
+                                                <div class="item-inner">
+                                                    <div class="item-title label twelveConstellations_eq8_title">今日概述</div>
+                                                    <div class="twelveConstellations_eq8_result"></div>
+                                                </div>
+                                            </div>
+                                        </li>
+
+                                    </ul>
+
+                                </div>
+                                <div class="list-block">
+                                    <ul>
+                                        <li>
+                                            <a href="#" class="list-button item-link twelveConstellationsDetail">星座介紹</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- Bottom Toolbar-->
+                <!--<div class="toolbar">
                 <div class="toolbar-inner">
-              
+
                     <a href="#" class="link">Link 1</a>
                     <a href="#" class="link">Link 2</a>
                 </div>
             </div>
 			-->
+            </div>
+
         </div>
-		
-	
-    </div>
 
-	<script>
-		var IntervalVibrate = "";
-	</script>
-    <script type="text/javascript" src="cordova.js"></script>
-    <script type="text/javascript" src="lib/framework7/js/framework7.js"></script>
-    <script type="text/javascript" src="js/my-app.js"></script>
-	<script>
+        <script>
+            var IntervalVibrate = "";
+        </script>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="lib/framework7/js/framework7.js"></script>
+        <script type="text/javascript" src="js/my-app.js"></script>
 
-	$(function(){
+        <script>
+            var titleName = {
+                "en": "Today's Fortune",
+                "sc": "今日运程",
+                "tc": "今日運程"
+            }
+            var twelveConstellationsTitle = {
+                "en": "Constellation",
+                "sc": "星座",
+                "tc": "星座"
+            }
 
-		var cookie= storageManager.getCookie();
-		
-		if(cookie!="" && cookie!=null){
-			$("[name=twelveConstellations]").val(cookie.twelveConstellations_val);
-			$(".selectedTwelveConstellations_name").html(cookie.twelveConstellations_name);
-			setTimeout(function(){
-				$("[name=twelveConstellations]").trigger("change")
-			},10);
-		}
-		$(".app_title").html("今日運程 ("+ moment().format('MMMM D, YYYY') +")");
+            var introductionBtn = {
+                "en": "Constellation introduction",
+                "sc": "星座介绍",
+                "tc": "星座介紹"
+            }
 
-		$("[name=twelveConstellations]").bind("change",function(){
-		//debugger;
-			$.ajax({
-				type: "post",
-				url: "http://app.data.qq.com/?umod=astro&act=astro&jsonp=1&func=TodatTpl&t=4&m=5&d=12",
-				data: {
-				  "a": $("[name=twelveConstellations] :selected").val(),
-				  "y": moment().format('YYYY') ,
-				  "m": moment().format('M'),
-				  "d": moment().format('D')
-				},
-				dataType: "jsonp",
-				jsonp: "callback",//传递给请求处理程序或页面的，用以获得jsonp回调函数名的参数名(一般默认为:callback)
-				jsonpCallback:"TodatTpl",//自定义的jsonp回调函数名称，默认为jQuery自动生成的随机函数名，也可以写"?"，jQuery会自动为你处理数据
-				success: function(response){
-					console.log(response);
-					console.log(response.fortune);
-					$(".icon-back").trigger("click");
-					$(response.fortune).each(function(index,content){
-						$(".twelveConstellations_eq"+index+"_result").html(toCode(content.content,1));
-						storageManager.setCookie({
-							"twelveConstellations_name":$("[name=twelveConstellations] :selected").html(),
-							"twelveConstellations_val":$("[name=twelveConstellations] :selected").val()
-						})
-					})
-					
-				}
-			 });
-		})
-		
-		$(".otherApp").bind("click",function(e){
-			e.preventDefault();
-			//alert(1);
-			var target = "_system";
-			var options = "location=yes";
-			var url = "https://play.google.com/store/apps/developer?id=Sky+Explorer";
-			window.open(url, target, options);
-			
-		})
-	})
-	
-	</script>
-</body>
+            var twelveConstellationsName = {
+                "en": [
+                    "Capricorn  12/22~1/20",
+                    "Aquarius  1/21~2/18",
+                    "Pisces  2/19~3/20",
+                    "Aries 3/21~4/20",
+                    "Taurus  4/21~5/21",
+                    "Gemini  5/22~6/21",
+                    "Cancer  6/22~7/22",
+                    "Leo 7/23~8/22",
+                    "Virgo  8/23~9/22",
+                    "Libra  9/23~10/23",
+                    "Scorpio  10/24~11/22",
+                    "Sagittarius  11/23~12/21"
+                ],
+                "sc": [
+                    "摩羯座  12/22~1/20",
+                    "水瓶座  1/21~2/18",
+                    "雙魚座  2/19~3/20",
+                    "牡羊座(白羊座) 3/21~4/20",
+                    "金牛座  4/21~5/21",
+                    "雙子座  5/22~6/21",
+                    "巨蟹座  6/22~7/22",
+                    "獅子座 7/23~8/22",
+                    "處女座  8/23~9/22",
+                    "天秤座  9/23~10/23",
+                    "天蠍座  10/24~11/22",
+                    "射手座  11/23~12/21"
+                ],
+                "tc": [
+                    "摩羯座  12/22~1/20",
+                    "水瓶座  1/21~2/18",
+                    "雙魚座  2/19~3/20",
+                    "牡羊座(白羊座) 3/21~4/20",
+                    "金牛座  4/21~5/21",
+                    "雙子座  5/22~6/21",
+                    "巨蟹座  6/22~7/22",
+                    "獅子座 7/23~8/22",
+                    "處女座  8/23~9/22",
+                    "天秤座  9/23~10/23",
+                    "天蠍座  10/24~11/22",
+                    "射手座  11/23~12/21"
+                ]
+            }
+
+            var twelveConstellationsItemName = {
+                "en": [
+                    "Composite Index",
+                    "Love index",
+                    "Job index",
+                    "Wealth index",
+                    "Health index",
+                    "Lucky color",
+                    "Lucky number",
+                    "Match with Q friends",
+                    "Today's overview"
+                ],
+                "sc": [
+                    "综合指数",
+                    "爱情指数",
+                    "工作指数",
+                    "财运指数",
+                    "健康指数",
+                    "幸运颜色",
+                    "幸运数字",
+                    "速配Q友",
+                    "今日概述"
+                ],
+                "tc": [
+                    "綜合指數",
+                    "愛情指數",
+                    "工作指數",
+                    "財運指數",
+                    "健康指數",
+                    "幸運顏色",
+                    "幸運數字",
+                    "速配Q友",
+                    "今日概述"
+                ]
+            }
+
+            var lang
+            $(function() {
+                if (navigator.language.split('-')[0] == "zh") {
+                    if (typeof(navigator.language.split('-')[1]) != "undefined") {
+                        if (navigator.language.split('-')[1].toLowerCase() == "tw") {
+                            lang = "tc"
+                        } else {
+                            if (navigator.language.split('-')[1].toLowerCase() == "hk") {
+                                lang = "tc"
+                            } else {
+                                lang = "sc"
+                            }
+                        }
+                    }
+                } else {
+                    lang = "en";
+                }
+                if(lang=="tc"){
+                  $(".langen").removeClass("button-fill");
+                  $(".langtc").addClass("button-fill");
+                  $(".langsc").removeClass("button-fill");
+                }else if(lang=="sc"){
+                  $(".langen").removeClass("button-fill");
+                  $(".langtc").removeClass("button-fill");
+                  $(".langsc").addClass("button-fill");
+                }else{
+                  $(".langen").addClass("button-fill");
+                  $(".langtc").removeClass("button-fill");
+                  $(".langsc").removeClass("button-fill");
+                }
+                pageInit();
+
+                $("[name=twelveConstellations]").bind("change", function() {
+                    //debugger;
+                    $.ajax({
+                        type: "post",
+                        url: "http://app.data.qq.com/?umod=astro&act=astro&jsonp=1&func=TodatTpl&t=4",
+                        data: {
+                            "a": $("[name=twelveConstellations] :selected").val(),
+                            "y": moment().format('YYYY'),
+                            "m": moment().format('M'),
+                            "d": moment().format('D')
+                        },
+                        dataType: "jsonp",
+                        jsonp: "callback", //传递给请求处理程序或页面的，用以获得jsonp回调函数名的参数名(一般默认为:callback)
+                        jsonpCallback: "TodatTpl", //自定义的jsonp回调函数名称，默认为jQuery自动生成的随机函数名，也可以写"?"，jQuery会自动为你处理数据
+                        success: function(response) {
+                            //console.log(response); console.log(response.fortune);
+                            $(".icon-back").trigger("click");
+                            $(response.fortune).each(function(index, content) {
+                                if (lang == "en") {
+                                    //console.log("en");  debugger;
+                                    if (index == "5" || index == 7 || index == 8) {
+
+                                        translate(content.content, "en", function(response) {
+
+                                            $(".twelveConstellations_eq" + index + "_result").html(response.data.translations[0].translatedText);
+                                            //    return;
+                                        })
+                                    } else {
+                                        $(".twelveConstellations_eq" + index + "_result").html(content.content);
+                                    }
+
+                                } else if (lang == "tc") {
+                                    console.log("tc");
+                                    $(".twelveConstellations_eq" + index + "_result").html(toCode(content.content, 1));
+                                } else {
+                                    console.log("sc");
+                                    $(".twelveConstellations_eq" + index + "_result").html(toCode(content.content, 0));
+                                }
+
+                            })
+                            storageManager.setCookie({"twelveConstellations_name": $("[name=twelveConstellations] :selected").html(), "twelveConstellations_val": $("[name=twelveConstellations] :selected").val()})
+                            cookie = storageManager.getCookie();
+                            console.log(cookie.twelveConstellations_val);
+
+                        }
+                    });
+                })
+
+                $(".twelveConstellationsDetail").bind("click", function(e) {
+                    e.preventDefault();
+
+                    if (lang == "en") {
+
+                        mainView.router.loadPage('intro/en/twelveConstellationsDetail_' + cookie.twelveConstellations_val + '.html')
+                    } else if (lang == "sc") {
+                        mainView.router.loadPage('intro/sc/twelveConstellationsDetail_' + cookie.twelveConstellations_val + '.html')
+                    } else {
+                        mainView.router.loadPage('intro/sc/twelveConstellationsDetail_' + cookie.twelveConstellations_val + '.html')
+                    }
+                })
+
+                $(".langen").bind("click", function() {
+                    lang = "en";
+                    $(".langen").addClass("button-fill");
+                    $(".langtc").removeClass("button-fill");
+                    $(".langsc").removeClass("button-fill");
+                    pageInit();
+                })
+
+                $(".langsc").bind("click", function() {
+                    lang = "sc";
+                    $(".langen").removeClass("button-fill");
+                    $(".langtc").removeClass("button-fill");
+                    $(".langsc").addClass("button-fill");
+                    pageInit();
+                })
+
+                $(".langtc").bind("click", function() {
+                    lang = "tc";
+                    $(".langen").removeClass("button-fill");
+                    $(".langtc").addClass("button-fill");
+                    $(".langsc").removeClass("button-fill");
+                    pageInit();
+                })
+
+                $(".otherApp").bind("click", function(e) {
+                    e.preventDefault();
+                    //alert(1);
+                    var target = "_system";
+                    var options = "location=yes";
+                    var url = "https://play.google.com/store/apps/developer?id=Sky+Explorer";
+                    window.open(url, target, options);
+
+                })
+				
+				$(".shareApp").bind("click",function(e){
+					window.plugins.socialsharing.share("Today Luck", "It is Awesome", "", "https://play.google.com/store/apps/details?id=com.skyexplorer.todayluck");
+				})
+            })
+
+            function translate(keyword, lang, callback) {
+                if (typeof(callback) != "function") {
+                    callback = function() {};
+                }
+                $.ajax({
+                    type: "post",
+                    url: "http://gogogo.synology.me/googletranslate/translate.php",
+                    data: {
+                        "keyword": keyword,
+                        "lang": lang
+                    },
+                    dataType: "json",
+                    success: function(response) {
+                        //debugger;
+                        callback(response);
+
+                    }
+                });
+            }
+
+            function pageInit() {
+
+                $.each(twelveConstellationsItemName[lang], function(index, content) {
+                    $(".twelveConstellations_eq" + index + "_title").html(content);
+                });
+
+                $("#twelveConstellations option").each(function(index, content) {
+                    $(this).html(twelveConstellationsName[lang][index]);
+                })
+
+                $(".twelveConstellationsTitle").html(twelveConstellationsTitle[lang]);
+                $(".twelveConstellationsDetail").html(introductionBtn[lang]);
+
+                var cookie = storageManager.getCookie();
+
+                if (cookie == "" || cookie == null) {
+                    storageManager.setCookie({"twelveConstellations_name": $("[name=twelveConstellations] option").eq(0).html(), "twelveConstellations_val": $("[name=twelveConstellations] option").eq(0).val()})
+                    cookie = storageManager.getCookie();
+                }
+
+                $("[name=twelveConstellations]").val(cookie.twelveConstellations_val);
+                //  debugger;
+                $(".selectedTwelveConstellations_name").html($("[name=twelveConstellations] :selected").html());
+
+                setTimeout(function() {
+                    $("[name=twelveConstellations]").trigger("change")
+                }, 100);
+
+                $(".app_title").html(titleName[lang] + " (" + moment().format('MMMM D, YYYY') + ")");
+
+            }
+
+            myApp.onPageInit('twelveConstellationsDetail', function(page) {
+                //	console.log($$(".twelveConstellationsDetailContents").html());
+                //debugger;
+                if (lang == "sc") {
+                    $(".twelveConstellationsDetailContents").html(toCode($(".twelveConstellationsDetailContents").html(), 0));
+                } else {
+                    $(".twelveConstellationsDetailContents").html(toCode($(".twelveConstellationsDetailContents").html(), 1));
+                }
+            })
+        </script>
+    </body>
 
 </html>

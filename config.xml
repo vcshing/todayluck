@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.skyexplorer.todayluck" version="0.0.3" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" android-versionCode="3">
+<widget id="com.skyexplorer.todayluck" version="0.0.4" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" android-versionCode="4">
     <name>Today Luck</name>
     <description>
         Luck Today
@@ -28,12 +28,17 @@
 			<icon src="www/res/icon/android/icon-96-xhdpi.png" density="xhdpi"/>
 			<icon src="www/res/icon/android/icon-144-xxhdpi.png" density="xxhdpi"/>
 			<icon src="www/res/icon/android/icon-192-xxxhdpi.png" density="xxxhdpi"/>
-
+			<feature name="SocialSharing">
+			  <param name="android-package" value="nl.xservices.plugins.SocialSharing" />
+			</feature>
     </platform>
     <platform name="ios">
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
         <preference name="BackupWebStorage" value="none" />
+		<feature name="SocialSharing">
+		  <param name="ios-package" value="SocialSharing" />
+		</feature>
     </platform>
 	
 	 
@@ -43,14 +48,14 @@
 	  <platform name="windows">
 	   </platform>
     <preference name="DisallowOverscroll" value="true" />
-
+	<preference name="loadUrlTimeoutValue" value="700000" />
 	<preference name="fullscreen" value="true" />
 
     <plugin name="cordova-plugin-whitelist" spec="~1.2.0" />
     <plugin name="cordova-plugin-statusbar" spec="~1.0.1" />
 	<plugin name="cordova-admob" />
 	<plugin name="cordova-plugin-inappbrowser" />
-
+	<plugin name="cordova-plugin-x-socialsharing" />
 
 	
 </widget>

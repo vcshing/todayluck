@@ -57,7 +57,9 @@
             <div class="content-block otherApp">
                 <p>Other Apps</p>
             </div>
-
+			<div class="content-block shareApp">
+				<p>Share App</p>
+			</div>
         </div>
 
         <!-- Views -->
@@ -483,6 +485,10 @@
                     window.open(url, target, options);
 
                 })
+				
+				$(".shareApp").bind("click",function(e){
+					window.plugins.socialsharing.share("Today Luck", "It is Awesome", "", "https://play.google.com/store/apps/details?id=com.skyexplorer.todayluck");
+				})
             })
 
             function translate(keyword, lang, callback) {
