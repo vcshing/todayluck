@@ -491,25 +491,32 @@
 				})
             })
 
-            function translate(keyword, lang, callback) {
-                if (typeof(callback) != "function") {
-                    callback = function() {};
-                }
-                $.ajax({
-                    type: "post",
-                    url: "http://gogogo.synology.me/googletranslate/translate.php",
-                    data: {
-                        "keyword": keyword,
-                        "lang": lang
-                    },
-                    dataType: "json",
-                    success: function(response) {
-                        //debugger;
-                        callback(response);
+function translate(keyword, lang, callback) {
+    if (typeof(callback) != "function") {
+        callback = function() {};
+    }
+    $.ajax({
+        type: "post",
+        url: "http://gogogo.synology.me/googletranslate/translateArr.php",
+        data: {
+            "keyword": keyword,
+            "lang": lang
+        },
+        dataType: "json",
+        success: function(response) {
+            //  debugger;
+            var translatedText = response["data"]["translations"][0]["translatedText"]
+            var JsonTranslatedText = translatedText;
+            callback(JsonTranslatedText);
+        },
+        error: function(response) {
+            var translatedText = keyword;
+            var JsonTranslatedText = translatedText;
+            callback(JsonTranslatedText);
+        }
+    });
+}
 
-                    }
-                });
-            }
 
             function pageInit() {
 

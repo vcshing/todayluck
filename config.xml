@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.skyexplorer.todayluck" version="0.0.5" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" android-versionCode="5">
+<widget id="com.skyexplorer.todayluck" version="0.0.5" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" android-versionCode="1">
     <name>Today Luck</name>
     <description>
         Luck Today
     </description>
     <author email="dev@cordova.apache.org" href="http://cordova.io">
-       Sky Explorer
+       Bug Duck Birl
     </author>
     <content src="index.html" />
     <access origin="*" />
@@ -22,12 +22,12 @@
         <preference name="android-minSdkVersion" value="14" />
         <allow-intent href="market:*" />
 		
-		    <icon src="www/res/icon/android/icon-36-ldpi.png" density="ldpi"/>
-			<icon src="www/res/icon/android/icon-48-mdpi.png" density="mdpi"/>
-			<icon src="www/res/icon/android/icon-72-hdpi.png" density="hdpi"/>
-			<icon src="www/res/icon/android/icon-96-xhdpi.png" density="xhdpi"/>
-			<icon src="www/res/icon/android/icon-144-xxhdpi.png" density="xxhdpi"/>
-			<icon src="www/res/icon/android/icon-192-xxxhdpi.png" density="xxxhdpi"/>
+		    <icon src="www/res/icon/android/ldpi.png" density="ldpi"/>
+			<icon src="www/res/icon/android/mdpi.png" density="mdpi"/>
+			<icon src="www/res/icon/android/hdpi.png" density="hdpi"/>
+			<icon src="www/res/icon/android/xhdpi.png" density="xhdpi"/>
+			<icon src="www/res/icon/android/xxhdpi.png" density="xxhdpi"/>
+			<icon src="www/res/icon/android/xxxhdpi.png" density="xxxhdpi"/>
 			<feature name="SocialSharing">
 			  <param name="android-package" value="nl.xservices.plugins.SocialSharing" />
 			</feature>
@@ -53,7 +53,7 @@
 	<preference name="permissions" value="none" />
     <plugin name="cordova-plugin-whitelist" spec="~1.2.0" />
     <plugin name="cordova-plugin-statusbar" spec="~1.0.1" />
-	<plugin name="cordova-admob" />
+	<plugin name="cordova-plugin-admobpro" spec="^2.29.29" />
 	<plugin name="cordova-plugin-inappbrowser" />
 	<plugin name="cordova-plugin-x-socialsharing" />
 <plugin name="phonegap-plugin-barcodescanner" />

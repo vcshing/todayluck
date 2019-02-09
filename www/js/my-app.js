@@ -17,8 +17,8 @@ $$(document).on('deviceready', function() {
 
    // Set AdMobAds options:
   admob.setOptions({
-	publisherId:          "ca-app-pub-3715336230214756/3466501023",  // Required
-	interstitialAdId:     "ca-app-pub-3715336230214756/4943234225",  // Optional
+	publisherId:          "ca-app-pub-5387430380370897/9000586926",  // Required
+	interstitialAdId:     "ca-app-pub-5387430380370897/1474230946",  // Optional
 	tappxIdAndroid:       "/120940746/Pub-15267-Android-0348",        // Optional
 	tappxShare:           0.1,
 	isTesting: false, // receiving test ads (do not test with real ads as your account will be banned)				// Optional
@@ -37,7 +37,22 @@ $$(document).on('deviceready', function() {
 
 	//navigator.vibrate([1000, 1000, 3000, 1000, 5000]);
 });
+$$(document).on('deviceready', function() {
+    console.log("Device is ready!");
+	
+    if (AdMob) AdMob.createBanner({
+        adId: "ca-app-pub-5387430380370897/9000586926",
+        position: AdMob.AD_POSITION.BOTTOM_CENTER,
+        autoShow: true
+    });
+	// preppare and load ad resource in background, e.g. at begining of game level
+	if(AdMob) AdMob.prepareInterstitial( {adId:"ca-app-pub-5387430380370897/1474230946", autoShow:false} );
 
+	// show the interstitial later, e.g. at end of game level
+	randomEvent(10, function() {
+		if(AdMob) AdMob.showInterstitial();
+	});
+});
 
 // Now we need to run the code that will be executed only for About page.
 
