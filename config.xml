@@ -53,7 +53,6 @@
 	<preference name="loadUrlTimeoutValue" value="700000" />
 	<preference name="fullscreen" value="true" />
 	<preference name="permissions" value="none" />
-    <plugin name="cordova-plugin-whitelist" spec="~1.2.0" />
     <plugin name="cordova-plugin-statusbar" spec="~1.0.1" />
 	<plugin name="cordova-plugin-admobpro" spec="^2.29.29" />
 	<plugin name="cordova-plugin-inappbrowser" />
