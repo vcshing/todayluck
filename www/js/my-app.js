@@ -1,5 +1,20 @@
 // Initialize app
-var myApp = new Framework7();
+var myApp = new Framework7({
+    "modalTitle": "^_^"
+    /*preprocess: function (content, url, next) {
+      alert(url);
+        if (url === 'people.html') {
+            var template = Template7.compile(content);
+            var resultContent = template({
+                title: 'People',
+                people: ['John', 'Ivan', 'Mary']
+            })
+
+            return resultContent;
+       }
+       return resultContent;
+    }*/
+});
 
 
 // If we need to use custom DOM library, let's save it to $$ variable:
@@ -14,14 +29,15 @@ var mainView = myApp.addView('.view-main', {
 
 $$(document).on('deviceready', function() {
     console.log("Device is ready!");
+
 	 window.open = cordova.InAppBrowser.open;
     if (AdMob) AdMob.createBanner({
-        adId: "ca-app-pub-5387430380370897/9000586926",
+        adId: "ca-app-pub-5387430380370897/9862002177",
         position: AdMob.AD_POSITION.BOTTOM_CENTER,
         autoShow: true
     });
 	// preppare and load ad resource in background, e.g. at begining of game level
-	if(AdMob) AdMob.prepareInterstitial( {adId:"ca-app-pub-5387430380370897/1474230946", autoShow:false} );
+	if(AdMob) AdMob.prepareInterstitial( {adId:"ca-app-pub-5387430380370897/6708391078", autoShow:false} );
 
 	// show the interstitial later, e.g. at end of game level
 	randomEvent(10, function() {
@@ -61,24 +77,10 @@ $$(document).on('pageInit', '.page[data-page="twelveConstellationsDetail"]', fun
 
 
 $$(document).on('pause', function (e) {
-	if($(".onoffswitch-checkbox2").is(':checked')=== true){
-
-	}else{
-		navigator.vibrate([]);
-		window.clearInterval(IntervalVibrate);
-		navigator.vibrate([]);
-		IntervalVibrate="";
-	}
+	
 })
 
 
 $$(document).on('resume', function (e) {
-	if(($(".onoffswitch-checkbox").is(':checked')=== true)){
-		navigator.vibrate([1000, 1000, 3000, 1000, 5000]);
-		if(IntervalVibrate==""){
-			IntervalVibrate = window.setInterval(function(){
-				navigator.vibrate([1000, 1000, 3000, 1000, 5000]);
-			},11000);
-		}
-	}
+	
 })
